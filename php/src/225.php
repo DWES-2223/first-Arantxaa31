@@ -2,10 +2,10 @@
 <html lang="es">
 <?php
 extract($_POST);
+$abecedario = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
 ?>
 <body>
  <?php if(isset($files) && isset($columnes)){
-    if(is_numeric($files) && is_numeric($columnes)){
 ?>
     <table>
         <thred>
@@ -19,14 +19,14 @@ extract($_POST);
         <?php for ($i=1; $i <= $files ; $i++) { ?>
                  <tr>
                     <?php for ($j=1; $j <= $columnes ; $j++){ ?>
-                        <td><?= chr(64+$i).$j ?></td>
+                        <td><?= substr($abecedario,$i-1,1).$j ?></td>
                     <?php } ?> 
                  </tr>
             <?php } ?>
         </tbody>
     </table>
 <?php
-    }
+
  }
  ?>
 </body>

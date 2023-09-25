@@ -3,6 +3,7 @@
 <?php
 $files = $_POST["files"]??null;
 $columnes = $_POST["columnes"]??null;
+$abecedario = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
 ?>
 <body>
 <?php
@@ -22,7 +23,7 @@ $columnes = $_POST["columnes"]??null;
                     <tr>
                         <?php for ($j=1; $j<=$columnes; $j++){ ?>
                             <?php if($j == $i || $j == ($columnes - $i + 1 )){ ?>
-                                <td><?= chr(64+$i).$j ?></td>
+                                <td><?= substr($abecedario,$i-1,1).$j ?></td>
                             <?php }else{ ?>
                                 <td></td>
                             <?php } ?>
