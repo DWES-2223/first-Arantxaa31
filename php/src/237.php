@@ -9,40 +9,18 @@ extract($_POST)
 ?>
 <body>
     <?php if(isset($quantitat)){ ?>
-        <form method="post" action="237.php">
-            <?php for ($i = 0; $i < $quantitat; $i++) {?>
-                    <h5>Persona <?= $i+1 ?></h5>
-                <div class="form-group row">
-                    <label for="nom" class="col-4 col-form-label">Nom</label>
-                    <div class="col-8">
-                        <div class="input-group">
-                            <input id="nom" name="nom[]" placeholder="Escriu el nom" type="text" required="required" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="nom" class="col-4 col-form-label">Altura</label>
-                    <div class="col-8">
-                        <div class="input-group">
-                            <input id="altura" name="altura[]" placeholder="Escriu l'altura" type="text" required="required" class="form-control">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="nom" class="col-4 col-form-label">Correu electronic</label>
-                    <div class="col-8">
-                        <div class="input-group">
-                            <input id="email" name="email[]" placeholder="Escriu el correu electronic" type="email" required="required" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-            <div class="form-group row">
-                <div class="offset-4 col-8">
-                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </form>
+    <form method="post" action="237.php">
+        <?php for ($i = 0; $i < $quantitat; $i++) {?>
+            <h5>Persona <?= $i+1 ?></h5>
+            <label for="nom" class="col-4 col-form-label">Nom</label>
+            <input id="nom" name="nom[]" placeholder="Escriu el nom" type="text" required="required" class="form-control">
+            <label for="nom" class="col-4 col-form-label">Altura</label>
+            <input id="altura" name="altura[]" placeholder="Escriu l'altura" type="text" required="required" class="form-control">
+            <label for="nom" class="col-4 col-form-label">Correu electronic</label>
+            <input id="email" name="email[]" placeholder="Escriu el correu electronic" type="email" required="required" class="form-control">
+        <?php } ?>
+        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
     <?php } else {
         $maxim = max($altura);
         $minim = min($altura);
