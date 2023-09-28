@@ -14,7 +14,7 @@ function arrayAleatori(int $tam, int $min, int $max) : array{
 function countParells(array &$array) : int{
     $totalPrells = 0;
     foreach ($array as $numero){
-        if ($numero % 2 == 0){
+        if (is_numeric($numero) && $numero % 2 == 0){
             $totalPrells ++;
         }
     }
@@ -37,6 +37,8 @@ function concatenar(...$paraules) : string{
         $frase = $frase . $paraula . ' ';
     }
     $fraseFinal = substr($frase,0,strlen($frase)-1);
+    // return implode(' ', $paraules)  paara ahorrarme el codigo de arriba
+    // tambien utilizar join si es array
     return $fraseFinal;
 }
 
@@ -69,9 +71,9 @@ function llevaDavant(int $num, int $cant) : int{
     return substr($num,$cant,strlen($num));
 }
 
-function peseta2euros(int $quantitat, $conticacio = 166){
+function peseta2euros(float $quantitat, $conticacio = 166){
     return round($quantitat / $conticacio);
 }
-function euro2pesetes(int $quantitat, $conticacio = 166){
+function euro2pesetes(float $quantitat, $conticacio = 166){
     return round($quantitat * $conticacio);
 }

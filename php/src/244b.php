@@ -24,14 +24,14 @@ $totalEnEuros = 0;
             <tr>
                 <td><?= $nom[$i] ?>  </td>
                 <td><?= $preus[$i] ?> €</td>
-                <td><?= euro2pesetes($preus[$i]) ?> pesetas</td>
+                <td><?= euro2pesetes(floatval($preus[$i])) ?> pesetas</td>
             </tr>
         <?php } ?>
             <tr>
                 <td>Total en euros: <?= $totalEnEuros?></td>
             </tr>
             <tr>
-                <td>Total en pesetas: <?= euro2pesetes($totalEnEuros)?></td>
+                <td>Total en pesetas: <?= euro2pesetes(floatval($totalEnEuros))?></td>
             </tr>
     </tbody>
 </table>
