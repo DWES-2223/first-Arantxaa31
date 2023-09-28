@@ -12,7 +12,8 @@ if (isset($pesetas) || isset($euros)){
     if ($pesetas > 0){
         $pesetasAEuros = peseta2euros($pesetas); ?>
         <p><?= $pesetas?> pesetas son <?= $pesetasAEuros ?> euros</p>
-<?php    }elseif ($euros > 0){
+<?php    }
+        if ($euros > 0){
         $eurosAPesetas = euro2pesetes($euros); ?>
         <p><?= $euros?> euros son <?= $eurosAPesetas ?> pesetas</p>
     <?php    }
