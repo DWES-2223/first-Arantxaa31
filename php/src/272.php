@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ej 272</title>
+    <title>Ej 272 Arantxa</title>
 </head>
 <?php
     include ('atletes.php');

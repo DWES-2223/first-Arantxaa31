@@ -145,7 +145,6 @@ function jove($nacimientos, $fechas){
     }
     $atletasMasJovenArray = [$atletaMasJoven,$menorDiferencia];
     return $atletasMasJovenArray;
-
 }
 function array_column_ext($array, $columnkey, $indexkey = null) {
     $result = array();

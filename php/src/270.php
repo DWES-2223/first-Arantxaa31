@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ej 270</title>
+    <title>Ej 270 Arantxa</title>
 </head>
 <body>
 <?php
