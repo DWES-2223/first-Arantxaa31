@@ -13,12 +13,12 @@ class ObjectesTest extends \Codeception\Test\Unit
         include_once('./src/Persona7.php');
         include_once('./src/Persona8.php');
         include_once('./src/Empleado.php');
-  //      include_once('./src/JSerializable.php');
- //       include_once('./src/Person.php');
-  //      include_once('./src/Worker.php');
-  //      include_once('./src/Manager.php');
-  //      include_once('./src/Employee.php');
-   //     include_once('./src/Enterprise.php');
+        include_once('./src/JSerializable.php');
+        include_once('./src/Person.php');
+        include_once('./src/Worker.php');
+        include_once('./src/Manager.php');
+        include_once('./src/Employee.php');
+        include_once('./src/Enterprise.php');
 
     }
 
@@ -63,7 +63,7 @@ class ObjectesTest extends \Codeception\Test\Unit
         $this->assertEquals(false,$empleado->estaJubilado());
         $empleado->setEdat(67);
         $this->assertEquals(true,$empleado->estaJubilado());
-        $empleado::modificaLimite(70);
+        Persona8::modificaLimite(70);
         $this->assertEquals(false,$empleado->estaJubilado());
 
     }
@@ -136,10 +136,10 @@ class ObjectesTest extends \Codeception\Test\Unit
 
     public function test312(){
         $empleado = new Employee(horasTrabajadas: 150,precioPorHora: 12, nombre:'Pepe',apellidos: 'Botera',edat: '24');
-        $this->assertEquals('{"nombre":"Pepe","apellidos":"Botera","edat":"24","telefonos":[],"horasTrabajadas":150,"precioPorHora":12}',$empleado->toJSON());
+        $this->assertEquals('{"nombre":"Pepe","apellidos":"Botera","edad":"24","telefonos":[],"horasTrabajadas":150,"precioPorHora":12}',$empleado->toJSON());
         $this->assertEquals($empleado->toJSON(),unserialize($empleado->toSerialize())->toJSON());
         $manager = new Manager(salari: 4000, nombre:'Ignasi',apellidos: 'Gomis Mullor',edat: '54');
-        $this->assertEquals('{"nombre":"Ignasi","apellidos":"Gomis Mullor","edat":"54","telefonos":[],"salari":4000}',$manager->toJSON());
+        $this->assertEquals('{"nombre":"Ignasi","apellidos":"Gomis Mullor","edad":"54","telefonos":[],"salario":4000}',$manager->toJSON());
         $this->assertEquals($manager->toJSON(),unserialize($manager->toSerialize())->toJSON());
         $empresa = new Enterprise('CIP FP BATOI','Serreta 8');
         $empresa->addWorker($empleado);

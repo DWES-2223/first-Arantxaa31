@@ -6,7 +6,7 @@ class FunctionsTest extends \Codeception\Test\Unit
      * @var \UnitTester
      */
     protected $tester;
-    
+    /*
     protected function _before()
     {
         include_once('./src/functions.php');

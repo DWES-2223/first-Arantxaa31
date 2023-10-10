@@ -41,13 +41,26 @@ class Empleado extends Persona8 {
         $this->sou = $sou;
     }
 
-    public static function toHtml(Empleado $emp): string{
+    public static function toHtml(Persona8 $emp): string{
         $informacion = '';
-        $informacion .= '<p>'.$emp->getNombreCompleto().'</p><ul>';
-        foreach ($emp->getTelefons() as $tel){
+        $informacion .= '<p>'.$emp->getNombreCompleto().'</p>';
+        if($emp instanceof  Empleado){
+            $informacion .= '<ul>';
+            foreach ($emp->getTelefons() as $tel){
+                $informacion .= '<li>' . $tel . '</li>';
+            }
+            $informacion .= '</ul>';
+            return $informacion;
+        }
+        return $informacion;
+    }
+    public function __toString(): string{
+        $informacion = '';
+        $informacion = Persona8::__toString();
+        $informacion .= '<ul>';
+        foreach ($this->getTelefons() as $tel){
             $informacion .= '<li>' . $tel . '</li>';
         }
-        $informacion .= '</ul>';
-        return $informacion;
+        return $informacion . '</ul>';
     }
 }

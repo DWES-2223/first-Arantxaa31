@@ -46,4 +46,7 @@ class Persona8 {
     public static function modificaLimite(int $limite){
         self::$limite_edat = $limite;
     }
+    public function __toString(): string {
+        return '<p>' . $this->getNombreCompleto() . '</p>';
+    }
 }
